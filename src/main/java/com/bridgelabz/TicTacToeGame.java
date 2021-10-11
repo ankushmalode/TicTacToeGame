@@ -12,16 +12,17 @@ public class TicTacToeGame {
 
         printBoardGame(gameBoard);
 
-        Scanner scan=new Scanner(System.in);
-        System.out.println("Enter the choise in between (1-9): ");
-        int pos=scan.nextInt();
-        System.out.println(pos);
+        while (true){
+            Scanner scan=new Scanner(System.in);
+            System.out.println("Enter the choise in between (1-9): ");
+            int pos=scan.nextInt();
 
-        placePiece(gameBoard, pos, "player");
-        Random random=new Random();
-        int comp=random.nextInt(9)+1;
-        placePiece(gameBoard, comp, "computer");
-        printBoardGame(gameBoard);
+            placePiece(gameBoard, pos, "player");
+            Random random=new Random();
+            int comp=random.nextInt(9)+1;
+            placePiece(gameBoard, comp, "computer");
+            printBoardGame(gameBoard);
+        }
     }
 
     public static void printBoardGame(char[][] gameBoard) {
@@ -68,6 +69,19 @@ public class TicTacToeGame {
                 gameBoard[4][4]=letter;
                 break;
         }
+    }
+
+    public static String checkWinner(){
+        List topRow= Arrays.asList(1,2,3);
+        List midRow= Arrays.asList(4,5,6);
+        List bottomRow= Arrays.asList(7,8,9);
+        List leftCol= Arrays.asList(1,4,7);
+        List midCol= Arrays.asList(2,5,8);
+        List rightCol= Arrays.asList(3,6,9);
+        List crossLine1= Arrays.asList(1,5,9);
+        List crossLine2= Arrays.asList(3,5,7);
+
+        return "";
     }
 
 }
