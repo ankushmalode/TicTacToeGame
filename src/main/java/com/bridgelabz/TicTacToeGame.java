@@ -18,6 +18,9 @@ public class TicTacToeGame {
         System.out.println(pos);
 
         placePiece(gameBoard, pos, "player");
+        Random random=new Random();
+        int comp=random.nextInt(9)+1;
+        placePiece(gameBoard, comp, "computer");
         printBoardGame(gameBoard);
     }
 
@@ -31,35 +34,38 @@ public class TicTacToeGame {
     }
 
     public static void placePiece(char[][] gameBoard, int pos, String user){
-
-
+        char letter = ' ';
+        if (user.equals("player"))
+            letter='X';
+        else if (user.equals("computer"))
+            letter='O';
         switch (pos){
             case 1:
-                gameBoard[0][0]='x';
+                gameBoard[0][0]=letter;
                 break;
             case 2:
-                gameBoard[0][2]='x';
+                gameBoard[0][2]=letter;
                 break;
             case 3:
-                gameBoard[0][4]='x';
+                gameBoard[0][4]=letter;
                 break;
             case 4:
-                gameBoard[2][0]='x';
+                gameBoard[2][0]=letter;
                 break;
             case 5:
-                gameBoard[2][2]='x';
+                gameBoard[2][2]=letter;
                 break;
             case 6:
-                gameBoard[2][4]='x';
+                gameBoard[2][4]=letter;
                 break;
             case 7:
-                gameBoard[4][0]='x';
+                gameBoard[4][0]=letter;
                 break;
             case 8:
-                gameBoard[4][2]='x';
+                gameBoard[4][2]=letter;
                 break;
             default:
-                gameBoard[4][4]='x';
+                gameBoard[4][4]=letter;
                 break;
         }
     }
